@@ -1,0 +1,136 @@
+/* Font management */
+@font-face{
+    font-family: "Asadera";
+    src: url("../fonts/Asadera-regular.otf") format("opentype"),
+         url("../fonts/Asadera-regular.ttf") format("truetype");
+}
+
+body {
+    font-family: "Asadera";
+    overflow-x: hidden;
+}
+
+.icon-size{
+    width: 1em;
+}
+
+a.murmur{
+    text-decoration: none;
+    color: #c83237;
+    font-weight: 600;
+}
+
+a.murmur:visited, a.murmur:hover, a.murmur:active{
+    color: #df898c;
+}
+
+#popup-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#extension-logo{
+    width: 2rem;
+}
+
+#tooltip-clipboard{
+    border-radius: 15px;
+    background-color: rgb(220,220,220,.8);
+    padding: 6px 12px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    transform: translate(calc(50vw - 50%), calc(90vh - 90%));
+    transition: opacity 0.5s linear;
+}
+
+/* button style */
+.button-23 {
+  background-color: #FFFFFF;
+  border: 3px solid #c83237;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 4px 8px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s, background-color .25s, color .25s, filter .25s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+}
+
+.button-23:hover{
+    background-color: #df898c;
+    color: white;
+}
+
+.button-23 img{
+    transition: filter .25s;
+}
+.button-23:hover img{
+    filter: invert(100%);
+
+}
+
+.button-23:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.button-23:active {
+  background-color: #F7F7F7;
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+.button-23:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.icon-copy{
+    filter: invert(28%) sepia(87%) saturate(1518%) hue-rotate(332deg) brightness(83%) contrast(96%);
+}
+
+.icon-copy:hover, .icon-copy:active{
+    filter: invert(60%) sepia(39%) saturate(471%) hue-rotate(308deg) brightness(97%) contrast(82%);
+}
+
+.table tr{
+    text-align: center;
+}
+
+/* Utility classes */
+.text-center{
+    text-align: center;
+}
+
+.my-2{
+    margin: 0.5em 0px;
+}
+
+.hidden{
+    opacity: 0;
+}
+
+.visible{
+    opacity: 1;
+}
+
+.inline-block{
+    display: inline-block;
+}

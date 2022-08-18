@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Favicon to MurmurHash",
+  "version": "1.0",
+
+  "description": "Extracts favicon of the current page and calculates their murmurhash.",
+
+  "icons": {
+    "48": "icons/favicon2murmurhash-48.png",
+    "96": "icons/favicon2murmurhash-96.png"
+  },
+
+  "permissions": ["clipboardWrite"],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["libs/murmurhash3_gc.js", "favicon_extractor.js"]
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/favicon2murmurhash-96.png",
+    "default_title": "Favicon to MurmurHash",
+    "default_popup": "popup/display_favicon_murmurhash.html"
+  }
+}

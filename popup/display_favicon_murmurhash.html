@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Favicon to Murmurhash</title>
+    <link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="assets/css/popup.css">
+  </head>
+
+  <body class="text-center">
+    <div id="popup-header" class="my-2">
+      <img id="extension-logo" src="../icons/favicon2murmurhash-48.png" alt="Logo of Favicon to murmurhash extenison">
+      <p>Favicon to MurmurHash</p>
+      <label id="lbl-reload-hashes" class="button-23">
+        Refresh <img class="icon-size" src="assets/images/arrow-rotate-right-solid.svg" alt="Reload icon">
+      </label>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <td>MurmurHash</td>
+          <td>Filename</td>
+          <td>URL</td>
+        </tr>
+      </thead>
+      <tbody id="hashes-display">
+        <tr>
+          <td>CORS</td>
+          <td>blocking favicon</td>
+          <td>fetch</td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="tooltip-clipboard" class="inline-block hidden">URL copied to clipboard…</div>
+    <div>Made with love by <a href="https://maltemo.github.io" class="murmur">Maltemo</a></div>
+    <script src="popup.js"></script>
+  </body>
+</html>
