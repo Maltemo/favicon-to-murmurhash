@@ -46,6 +46,22 @@ a.murmur:visited, a.murmur:hover, a.murmur:active{
     transition: opacity 0.5s linear;
 }
 
+#credits{
+    font-size: small;
+    color: lightgrey;
+    margin-top: .5rem;
+}
+
+#credits a{
+    text-decoration: none;
+    color: grey;
+    font-weight: 600;
+}
+
+#credits a:visited, a:hover, a:active{
+    color: lightgrey;
+}
+
 /* button style */
 .button-23 {
   background-color: #FFFFFF;
