@@ -1,9 +1,30 @@
 # Favicon to Murmurhash <img src="icons/favicon2murmurhash-48.png" width="35" alt="Extension logo">
 
-
 Extracts favicon of the current page and calculates their murmurhash.
 Shows links to shodan search based on favicon murmurhashes.
 Aims to ease OSINT investigations.
+
+## Install
+
+Search on the mozilla webstore "Favicon to Murmurhash" or just click on the link to the extension :
+https://addons.mozilla.org/fr/firefox/addon/favicon-to-murmurhash/
+
+Alternatively, you can clone the git repository on your computer :
+```
+git clone https://github.com/Maltemo/favicon-to-murmurhash.git
+```
+Then go to `Extension and Themes`, click on the setting wheel on this page and choose `Install module from files`.
+From this file browser, go to the cloned repository and select the `manifest.json` file.
+
+## Main usage
+
+During an OSINT investigation, if you find a website of your target, you can try to search for other websites using the same favicon.
+Click on the extension icon in your toolbar.
+From this page, you can choose the favicon, click on the murmurhash and get redirected directly to Shodan with the following query:
+```
+http.favicon.hash:{murmurhash}
+```
+In order to see results of those queries, you will need to have a Shodan account.
 
 ## Details about features
 
@@ -35,6 +56,16 @@ If you have other ideas to find a workaround or to at least help the user when t
 
 [MIT](LICENSE)
 
-## Contributors
+## Developemnt team
+
+### Author
+
+<a href="https://github.com/Maltemo">@Maltemo</a>
+
+### Direct help
 
 Big thanks to <a href="https://github.com/boberle">@boberle</a> that helped me with the debugging on the base64 part and to <a href="https://github.com/M3lanight">@M3lanight</a> that helped me for the design of the popup.
+
+### Contributors
+
+Maybe you ?
