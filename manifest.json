@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Favicon to MurmurHash",
-  "version": "1.0",
+  "version": "1.1",
 
   "description": "Extracts favicon of the current page and calculates their murmurhash.",
 

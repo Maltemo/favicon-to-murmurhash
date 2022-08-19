@@ -56,7 +56,7 @@ If you have other ideas to find a workaround or to at least help the user when t
 
 [MIT](LICENSE)
 
-## Developemnt team
+## Development team
 
 ### Author
 
