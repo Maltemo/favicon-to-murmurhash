@@ -24,18 +24,24 @@ function getFavicons() {
  * @return {Array.<Object>} List of objects containing murmurhash, favicon url and rel data.
  */
 async function processFavicons(faviconsArray) {
+  const allowedMimeTypes = [
+    "image/avif", "image/bpm", "image/gif", "image/jpeg", "image/vnd.microsoft.icon",
+    "image/png", "image/svg+xml", "image/tiff", "image/webp"
+  ];
   const promise_result = await Promise.all(
     faviconsArray.map(async (tag) => {
       if (window.fetch) {
         try {
           const imageBlobs = await downloadImage(tag.href);
-          const base64DataRFC2048 = await blobToBase64RFC2048(imageBlobs);
-          const murmurhash = murmurhash3_32_gc(base64DataRFC2048);
-          return {
-            href: tag.href,
-            rel: tag.rel,
-            murmurhash: murmurhash,
-          };
+          if (allowedMimeTypes.includes(imageBlobs.type)){
+            const base64DataRFC2048 = await blobToBase64RFC2048(imageBlobs);
+            const murmurhash = murmurhash3_32_gc(base64DataRFC2048);
+            return {
+              href: tag.href,
+              rel: tag.rel,
+              murmurhash: murmurhash,
+            };
+          }
         } catch (err) {
           if (err instanceof TypeError) {
             console.warn(
@@ -113,9 +119,10 @@ browser.runtime.onMessage.addListener(async function (
 async function calculateHashesAndSendMessage() {
   const favicons = getFavicons();
   const hashes_list = await processFavicons(favicons);
+  const filtered_hashes_list = hashes_list.filter(elt => elt !== undefined);
   await browser.runtime.sendMessage({
     murmurhash_favicon: "result",
-    hashes_list: hashes_list,
+    hashes_list: filtererd_hashes_list,
   });
 }
 
