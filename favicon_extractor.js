@@ -122,7 +122,7 @@ async function calculateHashesAndSendMessage() {
   const filtered_hashes_list = hashes_list.filter(elt => elt !== undefined);
   await browser.runtime.sendMessage({
     murmurhash_favicon: "result",
-    hashes_list: filtererd_hashes_list,
+    hashes_list: filtered_hashes_list,
   });
 }
 
